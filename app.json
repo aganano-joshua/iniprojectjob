@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "iniprojectjob",
-    "slug": "iniprojectjob",
+    "name": "JOBIT",
+    "slug": "JOBIT",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "iniprojectjob",
+    "icon": "./assets/icon/slack.png",
+    "scheme": "JOBIT",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/favicon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true

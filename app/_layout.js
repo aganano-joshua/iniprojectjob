@@ -1,5 +1,8 @@
 import { Stack } from "expo-router";
+import { Drawer } from 'expo-router/drawer';
 import { useFonts } from "expo-font";
+import { AppProvider } from "../context/appcontext";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 // import * as SplashScreen from "expo-splash-screen";
 
 // SplashScreen.preventAutoHideAsync();
@@ -21,9 +24,24 @@ const Layout = () => {
   }
 
   return (
-    <Stack initialRouteName="home">
-      <Stack.Screen name="home" />
-    </Stack>
+    // <Stack initialRouteName="index">
+    //   <Stack.Screen name="home" />
+    //   <Stack.Screen name="index" options={{
+    //     headerShown: false
+    //   }}/>
+    // </Stack>
+    <AppProvider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <Drawer screenOptions={{
+          headerShown: true
+        }}>
+          <Drawer.Screen name="index" options={{ title: "Welcome"}}/>
+          <Drawer.Screen name="home" options={{ title: "Jobs"}}/>
+          <Drawer.Screen name="likejobs" options={{ title: "Liked-Jobs"}}/>
+          {/* <Drawer.Screen name="logout" options={{ title: "Liked-Jobs"}}/> */}
+        </Drawer>
+      </GestureHandlerRootView>
+    </AppProvider>
   )
 };
 

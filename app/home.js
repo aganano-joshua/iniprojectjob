@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
-import { Stack, useRouter } from "expo-router";
+import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 
 import { COLORS, icons, images, SIZES } from "../constants";
 import {
@@ -13,6 +13,7 @@ import {
 const Home = () => {
   const router = useRouter()
   const [searchTerm, setSearchTerm] = useState("");
+  const {name} = useLocalSearchParams()
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -40,6 +41,7 @@ const Home = () => {
           <Welcome
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
+            name={name}
             handleClick={() => {
               if (searchTerm) {
                 router.push(`/search/${searchTerm}`)
